@@ -1,0 +1,146 @@
+<style>
+    .card {
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 1em;
+        max-width: 760px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-bottom: 20px;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .card img {
+        border-radius: 0.5em;
+        -o-object-fit: cover;
+        object-fit: cover;
+        height: 150px;
+        width: 150px;
+    }
+
+    .card__container {
+        position: relative;
+        -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+        flex-grow: 2;
+        margin-left: 1.4em;
+    }
+
+    .card__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 0.7em 0;
+    }
+
+    .card__content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .bxs-heart {
+        color: #5d9d0b;
+        float: right;
+    }
+
+    .bx-border-circle {
+        border-color: rgba(93, 157, 11);
+    }
+
+    figure {
+        margin: 0 0 0rem;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+    .bx {
+        color: #5d9d0b;
+    }
+
+    .image__container {
+        position: relative;
+    }
+
+    .image__container img {
+        display: block;
+    }
+
+    .image__container:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .image__container .bxs-zoom-in {
+        position: absolute;
+        top: 35%;
+        left: 35%;
+        cursor: pointer;
+    }
+
+    .modal-body {
+        padding: 0;
+    }
+</style>
+
+<div class="card">
+    <div class="image__container" ng-mouseover="zoomin = true" ng-mouseleave="zoomin = false"
+        ng-click='open(recipe.recipe.image)'>
+
+        <img ng-src="{{recipe.recipe.image}}" alt="recipe" />
+        <i class="bx bxs-zoom-in bx-lg" ng-if="zoomin"></i>
+
+    </div>
+
+    <div class="card__container">
+        <a href="" ng-click="openRecipe(recipe.recipe)">
+            <p class="card__title">{{recipe.recipe.label}}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <i class="bx bxs-bowl-hot"></i>
+                        <span ng-repeat="meal in recipe.recipe.mealType">{{meal}}</span>
+                    </div>
+                    <div class="col">
+                        <i class="bx bxs-flag-alt"></i>
+                        <span ng-repeat="country in recipe.recipe.cuisineType">{{country}}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <i class="bx bxs-edit-alt"></i>
+                        <span>{{recipe.recipe.ingredients.length}}</span> Ingredients
+                    </div>
+                    <div class="col">
+                        <i class="bx bxs-timer"></i>
+                        <span>{{recipe.recipe.totalTime}}</span> minutes
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                {{recipe.recipe.label}}
+            </div>
+        </div>
+    </div>
+</div>

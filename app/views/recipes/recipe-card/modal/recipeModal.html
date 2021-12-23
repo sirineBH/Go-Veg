@@ -1,0 +1,93 @@
+<style>
+    .fade:not(.show) {
+        opacity: 1;
+    }
+
+    .mt-2 {
+        margin-top: 3.5rem !important;
+    }
+
+    .recipe-card {
+        background: #FFF;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 1.3rem !important;
+    }
+
+    .recipe-card .body {
+        padding: 15px 15px 25px 15px;
+    }
+
+    .recipe-card .body .title {
+        background: transparent;
+        border-bottom: 1px solid #5d9d0b;
+        color: #5d9d0b;
+        display: block;
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding: 0 0 5px 0;
+        text-decoration: none;
+    }
+
+    .recipe-card .body h3 {
+        color: #5d9d0b;
+        font-weight: 300;
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 0;
+        text-align: center;
+        border-bottom: 3 solid #5d9d0b;
+    }
+
+    .recipe-card .body ul.ingredients {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .recipe-card .body ul.ingredients li {
+        color: #7f8c8d;
+        font-size: 1rem;
+        margin-bottom: 5px;
+
+    }
+
+    .recipe-card .body ul.ingredients li .bx {
+        color: #5d9d0b;
+        margin-right: 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+</style>
+
+<!-- <div class="m-2">
+    <figure>
+        <img ng-src="{{recipe.image}}" alt="recipe" />
+    </figure>
+    <hr>
+    <div>
+        <p>Ingredients</p>
+        <ul>
+            <li ng-repeat="ing in recipe.ingredients">
+                <img ng-src="{{ing.image}}" alt="recipe" width="100px" height="100px" />{{ing.text}}
+            </li>
+        </ul>
+    </div>
+</div>  -->
+
+<div class="mt-2" style="position: absolute; width: 100%;">
+    <div class="recipe-card">
+        <div class="body">
+            <h3>Ingredients</h3>
+            <hr>
+
+            <ul class="ingredients">
+                <li ng-repeat="ing in recipe.ingredients">
+                    <i class="bx bxs-cart-alt" aria-hidden="true"> </i>{{ing.text}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

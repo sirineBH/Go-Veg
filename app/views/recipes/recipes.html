@@ -1,0 +1,21 @@
+<div ng-controller="recipesController" ng-if="firstLoading" class="position-absolute top-50 start-50 translate-middle">
+    <i class="bx bx-cookie bx-burst bx-lg" style="color: #5d9d0b;"></i>
+</div>
+<div>
+    <div class="p-2" ng-controller="recipesController" ng-if="!firstLoading">
+        <div class="row">
+            <recipe-card recipe="recipe" ng-repeat="recipe in recipes" class="col-md-6"></recipe-card>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto" ng-if="!loading">
+            <button class="btn btn-green btn-lg" ng-if="next" ng-click="loadMore()">
+                Load More
+            </button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto" ng-if="loading">
+            <button class="btn btn-green btn-lg">
+                <i class="bx bx-loader-circle bx-spin me-md-2"></i>Loading
+            </button>
+        </div>
+    </div>
+</div>

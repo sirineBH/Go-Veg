@@ -1,0 +1,25 @@
+.nav-link {
+  color: #5d9d0b !important;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  color: #72eb3a !important;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.btn-green {
+  background-color: #5d9d0b !important;
+  color: #fff !important;
+}
+
+.text-green {
+  color: #5d9d0b !important;
+  font-weight: 700;
+}
+
+.sidenav-green {
+  background-color: #1b1d24 !important;
+}
